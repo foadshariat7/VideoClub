@@ -1,0 +1,26 @@
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p>search form:</p>
+        <form>
+                <div class="form-group">
+                  <label for="name">Film Name:</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                  <label for="dateFrom">date From:</label>
+                  <input type="date" class="form-control" id="dateFrom">
+                </div>
+                <div class="form-group">
+                        <label for="dateTo">date To:</label>
+                        <input type="date" class="form-control" id="dateTo">
+                      </div>
+
+                <button type="submit" class="btn btn-default">Search</button>
+              </form>
+    </div>
+  </div>
+
+<div class="row">
+    <app-movie-item *ngFor="let i of itemMovies" [movieItem]="i"></app-movie-item>
+</div>
