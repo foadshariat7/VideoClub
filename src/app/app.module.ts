@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieItemComponent } from './movie/movie-item/movie-item.component';
+import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MovieItemComponent } from './movie/movie-item/movie-item.component';
     DashboardComponent,
     HeaderComponent,
     MovieComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    MovieDetailComponent
   ],
   imports: [
     FormsModule ,

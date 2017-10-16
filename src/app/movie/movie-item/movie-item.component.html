@@ -1,4 +1,4 @@
-<div class="panel panel-primary">
+<div class="panel panel-primary"  [routerLink]="['/movie', movieItem.id ]" style="cursor: pointer;">
   <div class="panel-heading" style="height: 40px;">
    
     <div class="col-sm-9" >
@@ -12,7 +12,7 @@
 
       <div class="col-sm-4">
           
-          <img src="{{movieItem.imgUrl}} " class="img-thumbnail img-responsive"  alt="">        
+          <img src="{{movieItem.imgUrl}} " class="img-circle img-responsive"  alt="">        
          </div>
          <div class="col-sm-8">
             {{movieItem.description}}

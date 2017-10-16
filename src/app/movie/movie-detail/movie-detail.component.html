@@ -1,0 +1,35 @@
+<div class="row"  *ngIf="detailCheck else DetailEmpty">
+    <div class="panel panel-info" style="height: 40px;">
+        
+         <div class="col-sm-9" >
+             {{itemData.name}}
+         </div>
+         <div class="col-sm-3" style="direction: rtl;">
+             {{itemData.datePersian}}
+           </div>
+     </div>
+
+        <div class="panel-body">
+            <div class="row text-center" >
+                    <img src="{{itemData.imgUrl}} " class="img-thumbnail img-responsive"  alt="">                    
+            </div>
+
+              {{itemData.description}}
+        </div>
+      
+</div>
+
+<ng-template #DetailEmpty>
+        <h3>Plz Select Movie Item</h3>
+    </ng-template>
+
+
+
+
+
+
+
+
+
+
+

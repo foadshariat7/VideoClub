@@ -1,4 +1,5 @@
 export interface IMovie {
+    id:number,
     name:string,
     subject:string,
     datePersian:string,

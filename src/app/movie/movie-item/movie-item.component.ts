@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 
 import { IMovie } from './../../interface/imovie';
 import { Component, OnInit,Input } from '@angular/core';
@@ -10,11 +11,11 @@ import { Component, OnInit,Input } from '@angular/core';
 export class MovieItemComponent implements OnInit {
 @Input() movieItem:IMovie;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
-
+ 
 
 }

@@ -1,3 +1,5 @@
+import { MovieComponent } from './movie/movie.component';
+import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -8,7 +10,9 @@ import { LoginComponent } from './login/login.component';
 const appRoutes:Routes=[
     {path:'',redirectTo:'/login',pathMatch:'full'},
     {path:'login',component:LoginComponent},
-    {path:'dashboard', component:DashboardComponent}
+    {path:'dashboard', component:DashboardComponent},
+    {path:'movie/:id', component:DashboardComponent}
+
 ];
 
 

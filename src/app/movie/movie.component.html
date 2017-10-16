@@ -1,5 +1,5 @@
 
-<div class="panel panel-default">
+<div class="panel panel-default col-sm-10 col-sm-offset-1" style="background-color: rgb(231, 227, 227);">
     <div class="panel-body">
         <p>search form:</p>
         <form>
@@ -22,5 +22,11 @@
   </div>
 
 <div class="row">
+  <div class="col-sm-6">
     <app-movie-item *ngFor="let i of itemMovies" [movieItem]="i"></app-movie-item>
+  </div>
+  <div class="col-sm-6">
+      <app-movie-detail></app-movie-detail>
+  </div>
+
 </div>
