@@ -1,6 +1,6 @@
 import { MovieService } from './../movie.service';
 import { IMovie } from './../../interface/imovie';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -14,6 +14,8 @@ export class MovieDetailComponent implements OnInit ,OnDestroy {
   itemData:IMovie;
   itemDataSubscription:Subscription;
   detailCheck=false;
+
+  @ViewChild('txtStar') txtStar:ElementRef;
   
   constructor(private ActivatedRoute:ActivatedRoute,private MovieService:MovieService) { }
   
@@ -35,6 +37,10 @@ export class MovieDetailComponent implements OnInit ,OnDestroy {
   }
   
 
-
+  AddStar(){
+    this.MovieService.pushStar(this.itemData.id,+this.txtStar.nativeElement.value)
+    
+    
+  }
   
 }

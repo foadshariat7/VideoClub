@@ -7,6 +7,8 @@ export interface IMovie {
     Director:string,
     date:string,
     description:string,
-    imgUrl:string
+    imgUrl:string,
+    star:number,
+    numberOfReviews:number
 }
 

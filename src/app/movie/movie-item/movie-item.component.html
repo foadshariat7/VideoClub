@@ -1,4 +1,4 @@
-<div class="panel panel-primary"  [routerLink]="['/movie', movieItem.id ]" style="cursor: pointer;">
+<div class="panel panel-primary"  [routerLink]="['/movie', movieItem.id ]" style="cursor: pointer;" appMouseEnter>
   <div class="panel-heading" style="height: 40px;">
    
     <div class="col-sm-9" >
@@ -8,15 +8,19 @@
         {{movieItem.date}}
       </div>
     </div>
-  <div class="panel-body" style="direction: rtl; text-align: justify;">
+  <div class="panel-body" style="direction: rtl; text-align: justify;" >
 
       <div class="col-sm-4">
           
           <img src="{{movieItem.imgUrl}} " class="img-circle img-responsive"  alt="">        
-         </div>
-         <div class="col-sm-8">
+      </div>
+      <div class="col-sm-8">
             {{movieItem.description | slice:0:220}}...
-         </div>
-    
-  </div>
-</div>
+            <p><app-movie-item-star 
+                [rating]="movieItem.numberOfReviews !=0 ? movieItem.star / movieItem.numberOfReviews : 0"></app-movie-item-star></p>
+            </div>
+        </div>
+    </div>
+    <!-- 
+        [idMovie]="movieItem.id" [starMovie]="movieItem.star"
+[rating]="movieItem.numberOfReviews !=0 ? movieItem.star / movieItem.numberOfReviews : 0" -->
