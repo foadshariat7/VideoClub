@@ -1,20 +1,30 @@
-<div class="row"  *ngIf="detailCheck else DetailEmpty">
-    <div class="panel panel-info" style="height: 40px;">
-        
+<div class="row">
+    <div class="panel panel-info" style="height: 40px; background-color:rgb(203, 255, 246);"  *ngIf="detailCheck else DetailEmpty">
+        <div class="panel-body">
          <div class="col-sm-9" >
              {{itemData.name}}
          </div>
          <div class="col-sm-3" style="direction: rtl;">
-             {{itemData.datePersian}}
+             {{itemData.date}}
            </div>
+        </div>
      </div>
 
-        <div class="panel-body">
-            <div class="row text-center" >
+        <div class="panel-body" style="direction: rtl;">
+            <div class="row text-center" style="padding-bottom: 20px;">
                     <img src="{{itemData.imgUrl}} " class="img-thumbnail img-responsive"  alt="">                    
             </div>
 
-              {{itemData.description}}
+            <div>
+                <p>مدت زمان فیلم: <span>{{itemData.movieTime}}</span></p>
+                <p>کشور سازنده: <span>{{itemData.productCountry}}</span></p>
+                <p>کارگردان: <span>{{itemData.Director}}</span></p>
+                <p>موضوع: <span>{{itemData.subject}}</span></p>
+                <p style=" text-align: justify;">
+                   خلاصه داستان :  <span>{{itemData.description}}</span>
+                </p>
+            </div>
+              
         </div>
       
 </div>
