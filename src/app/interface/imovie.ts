@@ -1,3 +1,4 @@
+import { ICommentMovie } from './icomment-movie';
 export interface IMovie {
     id:number,
     name:string,
@@ -9,6 +10,7 @@ export interface IMovie {
     description:string,
     imgUrl:string,
     star:number,
-    numberOfReviews:number
+    numberOfReviews:number,
+    comment:ICommentMovie[]
 }
 

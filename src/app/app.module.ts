@@ -17,6 +17,8 @@ import { MovieItemComponent } from './movie/movie-item/movie-item.component';
 import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
 import { MouseEnterDirective } from './directives/mouse-enter.directive';
 import { MovieItemStarComponent } from './movie/movie-item/movie-item-star/movie-item-star.component';
+import { MovieDetailCommentComponent } from './movie/movie-detail/movie-detail-comment/movie-detail-comment.component';
+import { MovieDetailCommentItemComponent } from './movie/movie-detail/movie-detail-comment-item/movie-detail-comment-item.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MovieItemStarComponent } from './movie/movie-item/movie-item-star/movie
     MovieItemComponent,
     MovieDetailComponent,
     MouseEnterDirective,
-    MovieItemStarComponent
+    MovieItemStarComponent,
+    MovieDetailCommentComponent,
+    MovieDetailCommentItemComponent
   ],
   imports: [
     FormsModule ,
