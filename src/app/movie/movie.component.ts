@@ -13,7 +13,6 @@ itemMovies:IMovie[]=[];
 @ViewChild('txtname') txtname:ElementRef;
 @ViewChild('txtSubject') txtSubject:ElementRef;
 @ViewChild('txtDate') txtDate:ElementRef;
-ModelName:string="TEst";
 
 
 

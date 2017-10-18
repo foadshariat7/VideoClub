@@ -10,16 +10,16 @@
             <a target="_blank" href="#" class="navbar-brand">Video Clube</a>
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a (routerLink)="dashboard">Dashboard</a></li>
-                <li ><a href="#" target="_blank">Link2</a></li>
-                <li ><a (routerLink)="basket">sadasd</a></li>
+            <ul  class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/dashboard">Dashboard</a></li>
+                <li routerLinkActive="active"><a  target="_blank">Link2</a></li>
+                
                     
              </ul>
             
             <ul class="nav navbar-nav navbar-right">
-                    <li style="direction: rtl; " >
-                            <a style="color:aqua;" (routerLink)="basket" >
+                    <li style="direction: rtl; " routerLinkActive="active">
+                            <a style="color:aqua;" routerLink="/basket" >
                                 تعداد فیلمهای سبد خرید
                                  <span>{{BasketItemsCount}}</span>
                             </a> 

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BasketService {
 
-  basketDB:IBuyBasket[]=[{idUser:1,idMovie:2,numberMovie:1,datePersian:'1396/6/28'}];
+  basketDB:IBuyBasket[]=[{idUser:1,idMovie:2,numberMovie:1,nameMovie:'Black Dog',datePersian:'1396/6/28',price:1200}];
 
   constructor() { }
 

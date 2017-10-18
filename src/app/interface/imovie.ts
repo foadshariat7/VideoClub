@@ -12,6 +12,8 @@ export interface IMovie {
     star:number,
     numberOfReviews:number,
     comment:ICommentMovie[],
-    NumberExist:number
+    numberExist:number,
+    price:number
+
 }
 

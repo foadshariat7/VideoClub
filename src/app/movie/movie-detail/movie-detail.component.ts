@@ -48,8 +48,9 @@ IBuyBasket:IBuyBasket;
   }
   
   btnAddToBasket(){
-    this.IBuyBasket={idUser:this.UserId,idMovie:this.itemData.id,numberMovie:1,datePersian: moment().format('jYYYY/jM/jD')};
+    this.IBuyBasket={idUser:this.UserId,idMovie:this.itemData.id,numberMovie:1,nameMovie:this.itemData.name,datePersian: moment().format('jYYYY/jM/jD'),price:this.itemData.price};
      this.BasketService.putItemToBasket(this.IBuyBasket);
+     
   }
   
 }
