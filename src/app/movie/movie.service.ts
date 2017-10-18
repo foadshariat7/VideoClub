@@ -1,6 +1,7 @@
 import { ICommentMovie } from './../interface/icomment-movie';
 import { IMovie } from './../interface/imovie';
 import { Injectable } from '@angular/core';
+import * as moment from 'jalali-moment';
 
 @Injectable()
 export class MovieService {
@@ -43,7 +44,11 @@ comment:[{name:'Arash NB',comment: 'Reinforced Shocks', date: new Date(Date.now(
     this.movieDB.find(x=>x.id==id).numberOfReviews++;
   }
 
-  pushComment(id:number,comment:string){
+  pushComment(id:number,nameMovie:string,commentMovie:string){
+    this.movieDB.find(x=>x.id==id).comment.push({name:nameMovie,comment: commentMovie, date: new Date(Date.now()), datePersian: moment().format('jYYYY/jM/jD')});
+
+     /*  let todayJalali = moment().format('jYYYY/jM/jD');
+      npm install jalali-moment -S */
   }
 
 }
