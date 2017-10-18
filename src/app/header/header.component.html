@@ -11,11 +11,21 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a (routerLink)="dashboard">Dashboard</a></li>
-                <li class="active"><a href="#" target="_blank">Link2</a></li>
-                          
+                <li class="active"><a (routerLink)="dashboard">Dashboard</a></li>
+                <li ><a href="#" target="_blank">Link2</a></li>
+                <li ><a (routerLink)="basket">sadasd</a></li>
+                    
              </ul>
+            
             <ul class="nav navbar-nav navbar-right">
+                    <li style="direction: rtl; " >
+                            <a style="color:aqua;" (routerLink)="basket" >
+                                تعداد فیلمهای سبد خرید
+                                 <span>{{BasketItemsCount}}</span>
+                            </a> 
+                         </li>    
+
+
                 <li class="dropdown">
                     <a  class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-user"></span> 
@@ -55,6 +65,8 @@
                         </li>
                     </ul>
                 </li>
+
+
             </ul>
         </div>
     </div>

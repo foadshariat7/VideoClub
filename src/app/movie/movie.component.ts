@@ -1,6 +1,6 @@
 import { IMovie } from './../interface/imovie';
 import { MovieService } from './movie.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-movie',
@@ -9,10 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieComponent implements OnInit {
 itemMovies:IMovie[]=[];
+
+@ViewChild('txtname') txtname:ElementRef;
+@ViewChild('txtSubject') txtSubject:ElementRef;
+@ViewChild('txtDate') txtDate:ElementRef;
+ModelName:string="TEst";
+
+
+
+
   constructor(private MovieService:MovieService) { }
 
   ngOnInit() {
     this.itemMovies=this.MovieService.getAll();
   }
+
+  btnSearch(){
+      
+    this.itemMovies=this.MovieService.SearchItem(this.txtname.nativeElement.value,
+                    this.txtSubject.nativeElement.value,this.txtDate.nativeElement.value);
+  }
+
+
+
+
 
 }

@@ -1,8 +1,11 @@
+import { IBuyBasket } from './../../interface/ibuy-basket';
+import { BasketService } from './../../basket/basket.service';
 import { MovieService } from './../movie.service';
 import { IMovie } from './../../interface/imovie';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import * as moment from 'jalali-moment';
 
 @Component({
   selector: 'app-movie-detail',
@@ -14,10 +17,13 @@ export class MovieDetailComponent implements OnInit ,OnDestroy {
   itemData:IMovie;
   itemDataSubscription:Subscription;
   detailCheck=false;
+IBuyBasket:IBuyBasket;
+
+  UserId:number=1;
 
   @ViewChild('txtStar') txtStar:ElementRef;
   
-  constructor(private ActivatedRoute:ActivatedRoute,private MovieService:MovieService) { }
+  constructor(private ActivatedRoute:ActivatedRoute,private MovieService:MovieService,private BasketService:BasketService) { }
   
   ngOnInit() {
     
@@ -39,8 +45,11 @@ export class MovieDetailComponent implements OnInit ,OnDestroy {
 
   AddStar(){
     this.MovieService.pushStar(this.itemData.id,+this.txtStar.nativeElement.value)
-    
-    
+  }
+  
+  btnAddToBasket(){
+    this.IBuyBasket={idUser:this.UserId,idMovie:this.itemData.id,numberMovie:1,datePersian: moment().format('jYYYY/jM/jD')};
+     this.BasketService.putItemToBasket(this.IBuyBasket);
   }
   
 }

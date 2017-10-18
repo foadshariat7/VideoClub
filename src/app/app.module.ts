@@ -1,3 +1,4 @@
+import { BasketService } from './basket/basket.service';
 import { MovieService } from './movie/movie.service';
 import { LoginService } from './login/login.service';
 
@@ -19,6 +20,7 @@ import { MouseEnterDirective } from './directives/mouse-enter.directive';
 import { MovieItemStarComponent } from './movie/movie-item/movie-item-star/movie-item-star.component';
 import { MovieDetailCommentComponent } from './movie/movie-detail/movie-detail-comment/movie-detail-comment.component';
 import { MovieDetailCommentItemComponent } from './movie/movie-detail/movie-detail-comment-item/movie-detail-comment-item.component';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +34,15 @@ import { MovieDetailCommentItemComponent } from './movie/movie-detail/movie-deta
     MouseEnterDirective,
     MovieItemStarComponent,
     MovieDetailCommentComponent,
-    MovieDetailCommentItemComponent
+    MovieDetailCommentItemComponent,
+    BasketComponent
   ],
   imports: [
     FormsModule ,
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [LoginService,MovieService],
+  providers: [LoginService,MovieService,BasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

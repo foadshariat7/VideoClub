@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="panel panel-info" style="height: 40px; background-color:rgb(203, 255, 246);"  *ngIf="detailCheck else DetailEmpty">
+<div class="row" *ngIf="detailCheck else DetailEmpty">
+    <div class="panel panel-info" style="height: 40px; background-color:rgb(203, 255, 246);"  >
         <div class="panel-body">
          <div class="col-sm-9" >
              {{itemData.name}}
@@ -16,6 +16,9 @@
             </div>
 
             <div>
+                <p><button class="btn btn-Info" (click)="btnAddToBasket()">افزودن به سبد خرید</button>
+                
+                </p>
                 <p>مدت زمان فیلم: <span>{{itemData.movieTime}}</span></p>
                 <p>کشور سازنده: <span>{{itemData.productCountry}}</span></p>
                 <p>کارگردان: <span>{{itemData.Director}}</span></p>
@@ -24,7 +27,7 @@
                    خلاصه داستان :  <span>{{itemData.description}}</span>
                 </p>
                 <p>امتیاز : <span><input type="number" min="0" max="5"   #txtStar> <button class="btn btn-sm btn-default" (click)="AddStar()">ثبت</button></span></p>
-                <p><app-movie-detail-comment [MovieId]="itemData.id"></app-movie-detail-comment></p>
+                <p><app-movie-detail-comment [MovieId]="itemData.id" ></app-movie-detail-comment></p>
                 <p style="padding-top: 20px;padding-bottom: 40px;"> <span style="font-weight: bold; ">نظرات کاربران : </span>
                 <app-movie-detail-comment-item *ngFor="let r of itemData.comment" [commentItem]="r"></app-movie-detail-comment-item>
             </p>

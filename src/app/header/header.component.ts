@@ -1,3 +1,4 @@
+import { BasketService } from './../basket/basket.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  BasketItemsCount:number;
+  constructor(private BasketService:BasketService) { }
 
   ngOnInit() {
+    this.BasketItemsCount=this.BasketService.getBuyItemsCount();
   }
 
 }

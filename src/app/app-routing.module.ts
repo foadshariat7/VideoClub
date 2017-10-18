@@ -1,3 +1,4 @@
+import { BasketComponent } from './basket/basket.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ const appRoutes:Routes=[
     {path:'',redirectTo:'/login',pathMatch:'full'},
     {path:'login',component:LoginComponent},
     {path:'dashboard', component:DashboardComponent},
+    {path:'basket', component:BasketComponent},
     {path:'movie/:id', component:DashboardComponent}
 
 ];
