@@ -29,7 +29,7 @@ itemMovies:IMovie[]=[];
                     this.txtSubject.nativeElement.value,this.txtDate.nativeElement.value);
   }
 
-
+ 
 
 
 

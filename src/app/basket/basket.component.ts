@@ -13,10 +13,23 @@ totalPrice:number=0;
   constructor(private BasketService:BasketService) { }
 
   ngOnInit() {
-  this.IBuyBasket=this.BasketService.getAll();
-  this.IBuyBasket.forEach(element => {
-    this.totalPrice+= element.price;
-  });
+  this.TotalPrice();
+  }
+
+  btnDelete(index:number){
+    this.BasketService.DeleteItem(index);
+    console.log(index);
+    
+    this.TotalPrice();
+    
+  }
+
+  TotalPrice(){
+    this.totalPrice=0;
+    this.IBuyBasket=this.BasketService.getAll();
+    this.IBuyBasket.forEach(element => {
+      this.totalPrice+= element.price;
+    });
   }
  
 }

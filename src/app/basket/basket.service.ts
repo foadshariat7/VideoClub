@@ -21,6 +21,9 @@ export class BasketService {
       this.basketDB.push(ItemForBasket);
   }
 
+  DeleteItem(index:number){
+    this.basketDB.splice(index,1);
+  }
 
 
 }

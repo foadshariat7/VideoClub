@@ -16,13 +16,13 @@
     <td>قیمت</td>
     <td></td>
   </tr>
-  <tr  *ngFor="let i of IBuyBasket " >
+  <tr  *ngFor="let i of IBuyBasket ; let in=index" >
       <td>{{i.nameMovie}}</td>
       <td>{{i.numberMovie}}</td>
       <td>{{i.datePersian}}</td>
       <td>{{i.price}}</td>
       <td> 
-          <button type="button" class="btn btn-default btn-sm">
+          <button type="button" class="btn btn-default btn-sm" (click)="btnDelete(in)">
               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 
             </button>
       </td>
@@ -38,7 +38,9 @@
 </table>
 
 <hr/>
-
+<p>
+  <button class="btn btn-info">پرداخت با کارت شتاب</button>
+</p>  
 
 </div>
 

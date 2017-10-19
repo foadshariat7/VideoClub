@@ -2,7 +2,7 @@ import { IBuyBasket } from './../../interface/ibuy-basket';
 import { BasketService } from './../../basket/basket.service';
 import { MovieService } from './../movie.service';
 import { IMovie } from './../../interface/imovie';
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef ,Output} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import * as moment from 'jalali-moment';
@@ -14,10 +14,11 @@ import * as moment from 'jalali-moment';
 })
 export class MovieDetailComponent implements OnInit ,OnDestroy {
   
+  @Output() numItemBuy1:number;
   itemData:IMovie;
   itemDataSubscription:Subscription;
   detailCheck=false;
-IBuyBasket:IBuyBasket;
+  IBuyBasket:IBuyBasket;
 
   UserId:number=1;
 
@@ -50,7 +51,6 @@ IBuyBasket:IBuyBasket;
   btnAddToBasket(){
     this.IBuyBasket={idUser:this.UserId,idMovie:this.itemData.id,numberMovie:1,nameMovie:this.itemData.name,datePersian: moment().format('jYYYY/jM/jD'),price:this.itemData.price};
      this.BasketService.putItemToBasket(this.IBuyBasket);
-     
   }
   
 }
