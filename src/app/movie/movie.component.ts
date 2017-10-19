@@ -25,8 +25,19 @@ itemMovies:IMovie[]=[];
 
   btnSearch(){
       
-    this.itemMovies=this.MovieService.SearchItem(this.txtname.nativeElement.value,
-                    this.txtSubject.nativeElement.value,this.txtDate.nativeElement.value);
+    this.itemMovies=this.MovieService.getAll();
+    
+    if(this.txtname.nativeElement.value !=='')
+    this.itemMovies = this.itemMovies.filter(item => item.name == this.txtname.nativeElement.value);
+    if(this.txtDate.nativeElement.value !=='')
+    this.itemMovies = this.itemMovies.filter(item => item.date == this.txtDate.nativeElement.value);
+    if(this.txtSubject.nativeElement.value !=='')
+    this.itemMovies = this.itemMovies.filter(item => item.subject == this.txtSubject.nativeElement.value);
+
+
+
+    /* this.itemMovies=this.MovieService.SearchItem(this.txtname.nativeElement.value,
+                    this.txtSubject.nativeElement.value,this.txtDate.nativeElement.value); */
   }
 
  
