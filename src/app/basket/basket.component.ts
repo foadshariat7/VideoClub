@@ -18,8 +18,6 @@ totalPrice:number=0;
 
   btnDelete(index:number){
     this.BasketService.DeleteItem(index);
-    console.log(index);
-    
     this.TotalPrice();
     
   }

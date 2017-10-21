@@ -16,7 +16,12 @@
             </div>
 
             <div>
-                <p><button class="btn btn-info" (click)="btnAddToBasket()">افزودن به سبد خرید ({{itemData.price}}تومان)</button>
+                <p><button class="btn btn-info" (click)="btnAddToBasket()">افزودن به سبد خرید ({{itemData.price}} تومان) =>
+                    <span style="color: yellow">تعداد {{itemData.numberExist}} عدد</span>
+                   
+                </button>
+                <span style="color: red;font-weight: bold;">{{errorMSG}}</span>
+                <span style="color: green;font-weight: bold;">{{trueMSG}}</span>
                 
                 </p>
                 <p>مدت زمان فیلم: <span>{{itemData.movieTime}}</span></p>

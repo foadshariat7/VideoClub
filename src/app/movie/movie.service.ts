@@ -11,7 +11,7 @@ export class MovieService {
     movieTime:'120 دقیقه',productCountry:'ایران',Director:'علی صادقی',date: '2012' 
     ,description:'داستان سریال هنگامی آغاز می‌شود که پدر و مادری متوجه می‌شوند فرزندان آنها داری توانایی‌های فوق‌العاده و ابرقهرمانی می‌باشند. در چنین شرایطی و در حالی که جامعه و سیستم حاکم به دلایل مختلف به این افراد به چشم سوء‌ظن و بی‌اعتمادی می‌نگرد ، افراد این خانواده در تلاش برای فرار از دست افرادی هستند که به دنبال آنها می‌باشند. در این بین آنها با گروهی مرموز مواجه می‌شوند که با توانایی‌های منحصر به فرد فرزندانشان مشکلی ندارند اما ، در عین حال پیوستن افراد خانواده به این گروه آنها را وارد چالش جدیدی برای تلاش جهت زنده ماندن می‌کند و…',
   imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6OTySNCTVD-CeOZQ7eSWTvbUZkzcZMsewe3Axs0wUL0lgabcF'
-,star:3,numberOfReviews:1,numberExist:1,price:1200,
+,star:3,numberOfReviews:1,numberExist:3,price:1200,
 comment:[{name:'Arash NB',comment: 'Reinforced Shocks', date: new Date(Date.now()), datePersian: '1396/02/5'}]}
 ,
     {id:2,name:'Movie 2',subject:'ترسناک',
@@ -50,6 +50,13 @@ comment:[{name:'Arash NB',comment: 'Reinforced Shocks', date: new Date(Date.now(
 
   pushComment(id:number,nameMovie:string,commentMovie:string){
     this.movieDB.find(x=>x.id==id).comment.push({name:nameMovie,comment: commentMovie, date: new Date(Date.now()), datePersian: moment().format('jYYYY/jM/jD')});
+  }
+
+  buyMovie(MovieId:number){
+    this.movieDB.find(x=>x.id==MovieId).numberExist--;
+  }
+  ComeBackMovie(MovieId:number){
+    this.movieDB.find(x=>x.id==MovieId).numberExist++;
   }
 
 }
