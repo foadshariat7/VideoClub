@@ -1,5 +1,6 @@
 export interface IBuyBasket {
-    idUser:number,
+    nameFamily:string,
+    userName:string,
     idMovie:number,
     nameMovie:string,
     numberMovie:number,

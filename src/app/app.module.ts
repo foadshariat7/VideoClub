@@ -21,6 +21,7 @@ import { MovieItemStarComponent } from './movie/movie-item/movie-item-star/movie
 import { MovieDetailCommentComponent } from './movie/movie-detail/movie-detail-comment/movie-detail-comment.component';
 import { MovieDetailCommentItemComponent } from './movie/movie-detail/movie-detail-comment-item/movie-detail-comment-item.component';
 import { BasketComponent } from './basket/basket.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BasketComponent } from './basket/basket.component';
     MovieItemStarComponent,
     MovieDetailCommentComponent,
     MovieDetailCommentItemComponent,
-    BasketComponent
+    BasketComponent,
+    AdminComponent
   ],
   imports: [
     FormsModule ,

@@ -1,0 +1,43 @@
+
+<div class="row" style="padding-bottom: 60px;">
+    <app-header></app-header>
+</div>
+
+<div class="container" style="direction: rtl; ">
+    
+    <div class="col-sm-8 col-sm-offset-2">
+    <h2>لیست خرید: </h2>
+    
+    <table class="table table-striped table-hover text-center" style="background-color: rgb(223, 223, 221);">
+      <tr style="background-color: rgb(123, 255, 174); font-weight: bold; ">
+        <td>نام</td>
+        <td>نام کاربری</td>
+        <td>نام فیلم</td>
+        <td>تعداد</td>
+        <td>تاریخ</td>
+        <td>قیمت</td>
+        <td>ارسال فیلم</td>
+      </tr>
+      <tr  *ngFor="let i of IBuyBasket ;let in=index" >
+          <td>{{i.nameFamily}}</td>
+          <td>{{i.userName}}</td>
+          <td>{{i.nameMovie}}</td>
+          <td>{{i.numberMovie}}</td>
+          <td>{{i.datePersian}}</td>
+          <td>{{i.price}}</td>
+          <td> 
+              <button type="button" class="btn btn-default btn-sm" (click)="btnDelivery(in)">
+                  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 
+                </button>
+          </td>
+         
+        </tr>
+      
+    </table>
+    
+    <hr>
+   
+    
+    </div>
+    
+    </div>

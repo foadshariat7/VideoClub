@@ -1,3 +1,4 @@
+import { AdminComponent } from './admin/admin.component';
 import { BasketComponent } from './basket/basket.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
@@ -13,6 +14,8 @@ const appRoutes:Routes=[
     {path:'login',component:LoginComponent},
     {path:'dashboard', component:DashboardComponent},
     {path:'basket', component:BasketComponent},
+    {path:'admin', component:AdminComponent},
+
     {path:'movie/:id', component:DashboardComponent}
 
 ];

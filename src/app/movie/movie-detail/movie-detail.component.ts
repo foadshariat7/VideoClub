@@ -21,7 +21,8 @@ export class MovieDetailComponent implements OnInit ,OnDestroy {
   errorMSG:string='';
   trueMSG:string='';
 
-  UserId:number=1;
+  nameFamily:string='Arash Nabiniya';
+  userName:string='arash'
 
   @ViewChild('txtStar') txtStar:ElementRef;
   
@@ -59,7 +60,7 @@ export class MovieDetailComponent implements OnInit ,OnDestroy {
     {
       if(this.BasketService.getBuyItemsCount()<5)
       {
-        this.IBuyBasket={idUser:this.UserId,idMovie:this.itemData.id,numberMovie:1,nameMovie:this.itemData.name,datePersian: moment().format('jYYYY/jM/jD'),price:this.itemData.price};
+        this.IBuyBasket={nameFamily:this.nameFamily,userName:this.userName,idMovie:this.itemData.id,numberMovie:1,nameMovie:this.itemData.name,datePersian: moment().format('jYYYY/jM/jD'),price:this.itemData.price};
          this.BasketService.putItemToBasket(this.IBuyBasket);
          this.trueMSG='با موفقیت خریداری شد.';
          this.errorMSG='';
