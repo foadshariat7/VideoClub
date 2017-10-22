@@ -24,7 +24,7 @@ totalPrice:number=0;
 
   TotalPrice(){
     this.totalPrice=0;
-    this.IBuyBasket=this.BasketService.getAll();
+    this.IBuyBasket=this.BasketService.getAllForUser();
     this.IBuyBasket.forEach(element => {
       this.totalPrice+= element.price;
     });
