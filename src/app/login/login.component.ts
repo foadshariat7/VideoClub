@@ -28,15 +28,12 @@ export class LoginComponent implements OnInit {
   }
 
 btnLoginCheck(){
-  console.log('strat');
+
   if(this.LoginService.LoginCheck(this.userName.nativeElement.value,this.password.nativeElement.value))
     this.router.navigate(['dashboard']);
   else
-  {
-    console.log('fail');
-    
-    this.loginMSG='نام کاربری و یا پسورد اشتباه است'
-  }
+      this.loginMSG='نام کاربری و یا پسورد اشتباه است'
+  
 
   
 /* if(this.LoginService.LoginCheck(this.userName.nativeElement.value,this.password.nativeElement.value))
