@@ -1,3 +1,5 @@
+
+import { AutGuard } from './login/aut-guard.service';
 import { BasketService } from './basket/basket.service';
 import { MovieService } from './movie/movie.service';
 import { LoginService } from './login/login.service';
@@ -22,6 +24,8 @@ import { MovieDetailCommentComponent } from './movie/movie-detail/movie-detail-c
 import { MovieDetailCommentItemComponent } from './movie/movie-detail/movie-detail-comment-item/movie-detail-comment-item.component';
 import { BasketComponent } from './basket/basket.component';
 import { AdminComponent } from './admin/admin.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AutGuardAdmin } from './login/aut-guard-admin.service';
 
 @NgModule({
   declarations: [
@@ -37,14 +41,15 @@ import { AdminComponent } from './admin/admin.component';
     MovieDetailCommentComponent,
     MovieDetailCommentItemComponent,
     BasketComponent,
-    AdminComponent
+    AdminComponent,
+    NotFoundComponent
   ],
   imports: [
     FormsModule ,
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [LoginService,MovieService,BasketService],
+  providers: [LoginService,MovieService,BasketService,AutGuard,AutGuardAdmin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

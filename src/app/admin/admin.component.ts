@@ -18,7 +18,6 @@ export class AdminComponent implements OnInit {
 
   btnDelivery(i:number){
     this.BasketService.DeliveryItem(i);
-    
   }
 
 }

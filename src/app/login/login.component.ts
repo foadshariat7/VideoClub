@@ -24,14 +24,19 @@ export class LoginComponent implements OnInit {
   constructor(private LoginService:LoginService,private router:Router) { }
 
   ngOnInit() {
+    this.LoginService.logOut();
   }
 
 btnLoginCheck(){
-
+  console.log('strat');
   if(this.LoginService.LoginCheck(this.userName.nativeElement.value,this.password.nativeElement.value))
- this.router.navigate(['dashboard']);
+    this.router.navigate(['dashboard']);
   else
-this.loginMSG='نام کاربری و یا پسورد اشتباه است'
+  {
+    console.log('fail');
+    
+    this.loginMSG='نام کاربری و یا پسورد اشتباه است'
+  }
 
   
 /* if(this.LoginService.LoginCheck(this.userName.nativeElement.value,this.password.nativeElement.value))

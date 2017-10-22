@@ -16,38 +16,42 @@ export class LoginService {
   constructor( ) { }
 
   LoginCheck(userName:string,password:string){
-    
-    let index=this.loginDb.findIndex(x=>x.userName==userName && x.password==password);
-    if(index>-1)
-    {
-      this.currentUser=this.loginDb[index];
+    this.currentUser=this.loginDb.find(x=>x.userName.toLowerCase()==userName.toLowerCase() && x.password==password)
+    if(this.currentUser=== undefined)
+      return false;
+      else
       return true;
-    }else
-    return false;
+    }
 
-/*     this.loginDb.find(
-      (user:ILogin)=>{
-        if(userName==user.userName && password==user.password)
-        {
-          this.currentUser=user;
-          console.log(this.currentUser.userName + this.currentUser.password + '--' +this.currentUser.nameFamily);
-          
-          return true;
-        }
-        else 
-        return null;
+  isAuthenticated_User(){
+    const promise_user=new Promise(
+      (resolve,reject)=>{
+        if(this.currentUser === undefined)
+        resolve(false);
+        else  resolve(true);
       }
-    ); */
-    /* ------------------------- */
-   /*  if(this.loginDb.find(x=>x.userName==userName && x.password==password))
-    {
-      return true;
-    }
+    );
+    return promise_user;
+  }
 
-    else 
-    return false;
- */
 
-    }
+  isAuthenticated_Admin(){
+
+    const promise_admin=new Promise(
+      (resolve,reject)=>{
+        if(this.currentUser=== undefined)
+        resolve(false);
+        if(this.currentUser.level==='Admin')
+          resolve(true);
+        else  resolve(false);
+        
+      }
+    );
+    return promise_admin;
+  }
+
+logOut(){
+  this.currentUser=null;
+}
 
 }
