@@ -26,6 +26,7 @@ import { BasketComponent } from './basket/basket.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AutGuardAdmin } from './login/aut-guard-admin.service';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AutGuardAdmin } from './login/aut-guard-admin.service';
     MovieDetailCommentItemComponent,
     BasketComponent,
     AdminComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DropdownDirective
   ],
   imports: [
     FormsModule ,

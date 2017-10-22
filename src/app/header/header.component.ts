@@ -1,3 +1,5 @@
+import { LoginService } from './../login/login.service';
+
 import { BasketService } from './../basket/basket.service';
 import { Component, OnInit, DoCheck } from '@angular/core';
 
@@ -8,10 +10,11 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 })
 export class HeaderComponent implements OnInit,DoCheck {
   BasketItemsCount:number;
-  constructor(private BasketService:BasketService) { }
-  
+  constructor(private BasketService:BasketService,private LoginService:LoginService) { }
+  nameFamily:string='';
   ngOnInit() {
     this.BasketItemsCount=this.BasketService.getBuyItemsCount();
+    this.nameFamily=this.LoginService.currentUser.nameFamily;
   }
   
   ngDoCheck(): void {
