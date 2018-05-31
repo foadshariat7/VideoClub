@@ -6,7 +6,7 @@ import { MovieService } from './../movie.service';
 import { IMovie } from './../../interface/imovie';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef ,Output} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import * as moment from 'jalali-moment';
 
 @Component({
